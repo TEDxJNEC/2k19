@@ -1,0 +1,170 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #eee;
+  color: #444;
+  /*
+    font-family: "myriad pro", myriad, helvetica, arial, sans-serif;
+    font-weight: 100;
+    */
+  font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+a {
+  color: #0099dd;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+#title {
+  font-size: 16pt;
+  top: 100px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  -webkit-transform: translateZ(-800px);
+          transform: translateZ(-800px);
+  text-align: center;
+}
+#title h1 {
+  font-size: 54pt;
+  font-weight: 200;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px 0;
+}
+#title p {
+  width: 600px;
+}
+h2 {
+  font-size: 24pt;
+  font-weight: 200;
+  margin-bottom: 24pt;
+}
+p {
+  width: 480px;
+  max-width: 100%;
+  line-height: 160%;
+  margin: 0 auto;
+  opacity: .6;
+}
+#scene {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+#container {
+  padding: 50px 0 250px 0;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.info {
+  padding: 0 35px;
+}
+.display {
+  margin: 0 -100%;
+  display: inline-block;
+  position: relative;
+  background-color: #111;
+  z-index: 100;
+  border-radius: 20px;
+  border-top: 10px solid #ccc;
+  border-bottom: 120px solid #ccc;
+  -webkit-transform: rotateX(-69deg);
+          transform: rotateX(-69deg);
+  /*Interestingly, using exactly 90 degrees seems to make the gifs not animate - perhaps this is some kind of performance thing...?
+    (...based on an incorrect assumption that if an object is turned at exactly 90 degrees - completely edge-on - it's invisible, but that's not always true - it depends on where it's being viewed from!) */
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+/* Add branding - optional */
+.display:before {
+  /*
+    content: '';
+    font-size: 65px;
+    color: #111;
+    */
+  content: '';
+  background: url('data:image/svg+xml;utf8,<svg width="46" height="54" viewBox="0 0 46 54" xmlns="http://www.w3.org/2000/svg"><path d="M44.52 18.25c-4.03 2.85-6.04 6.27-6.04 10.28 0 4.8 2.48 8.48 7.46 11.05a29.72 29.72 0 0 1-5.8 10.1c-2.53 2.86-4.84 4.3-6.94 4.3-.98 0-2.32-.33-4.03-.98l-.82-.32a12.44 12.44 0 0 0-4.43-.97 12 12 0 0 0-3.98.76l-1.03.37-1.29.53a8.3 8.3 0 0 1-3.08.6c-2.45 0-5.15-2-8.1-6.03C2.2 42.17.06 35.89.06 29.08c0-4.83 1.33-8.72 3.98-11.68 2.66-2.95 6.17-4.43 10.55-4.43 1.63 0 3.16.3 4.59.9l.97.4 1.03.42c.91.39 1.65.58 2.22.58.72 0 1.52-.17 2.4-.5l1.34-.53 1-.37c1.6-.58 3.37-.87 5.3-.87 4.59 0 8.28 1.75 11.08 5.25zM33.65.79a11.17 11.17 0 0 1-3.24 9.43 10.42 10.42 0 0 1-7.73 3.44c-.08-.69-.13-1.18-.13-1.48 0-2.58 1.03-5 3.09-7.27A11.74 11.74 0 0 1 32.78.92l.87-.13z" fill="#111" fill-rule="evenodd"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  height: 58px;
+  position: absolute;
+  bottom: -85px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+/* Add shine - optional */
+.display:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(70deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 59.9%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.35) 100%);
+}
+.screen {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  width: 960px;
+  max-width: 100%;
+  height: 540px;
+  margin: 40px;
+}
+.screen img {
+  width: 960px;
+  max-width: 100%;
+  height: 540px;
+}
+.stand {
+  background-color: #999;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999), to(#ddd));
+  background: linear-gradient(#999 0, #ddd 100%);
+  border-bottom: 1px solid #fff;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: -1;
+  border-radius: 20%;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), 0 0 100px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), 0 0 100px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-150px) rotateX(20deg);
+          transform: translateY(-150px) rotateX(20deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+#endprompt {
+  background-color: #fff;
+  padding: 80px 0 120px 0;
+}
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 50px;
+  text-align: center;
+}

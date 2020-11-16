@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #262626;
+    transition: 0.5s;
+
+}
+.active{
+    right: 0;
+}
+
+.rotatebtn{
+    
+    transform: rotate(450deg);
+    transition: 1s ease-in-out;
+}
+
+.menu{
+    margin: 0;
+    padding: 20px 0;
+}
+
+.list{
+    list-style: none;
+}
+
+.links1,.links2,.links3,.links4,.links5,.links6,.links7{
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: rgb(117, 116, 116);
+    position: relative;
+}
+
+.links1::after,.links2::after,.links3::after,.links4::after,.links5::after,.links6::after,.links7::after{
+    content: "";
+    position: absolute;
+    left: 1;
+    right: 12px;
+    bottom: 0px;
+    width: 95%;
+    height: 40px;
+    padding: 0;
+    background :aqua;
+    display: inline-block;
+    z-index: -5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+.links1:hover::after,.links2:hover::after,.links3:hover::after,.links4:hover::after,.links5:hover::after,.links6:hover::after,.links7:hover::after{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.links2::after{
+    
+    background:rgb(121, 128, 224);
+    
+}
+
+.links3::after{
+    
+    background :rgb(190, 168, 65);
+}
+.links4::after{
+    
+    background :rgb(37, 168, 140);
+    
+}
+
+.links5::after{
+    
+    background :rgb(103, 182, 83);
+}
+.links6::after{
+    
+    background:rgba(224, 214, 121, 0.658);
+    
+}
+.links7::after{
+    
+    background:rgb(238, 85, 85);
+    
+}
+
+
+
+.menubtn{
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: 50px;
+    height: 50px;
+   
+  
+}
