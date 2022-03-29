@@ -1,0 +1,270 @@
+body#widgetbody {
+	margin: 0;
+	padding: 0;
+}
+#phiculator {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 9px;
+	line-height: normal;
+	color: #666;
+	position: relative;
+	margin: 9px 15px 21px 15px;
+	width: 218px;
+	height: 342px;
+	-apple-dashboard-region: dashboard-region(control rectangle 40px 40px 40px 40px);
+}
+#phiculator #front, #phiculator #back {
+	width: 202px;
+	height: 326px;
+	border: 8px solid #fff;
+	background-color: #ddd;
+	position: absolute;
+	padding: 0;
+	top: 0;
+	left: 0;
+	-moz-box-shadow: 0 6px 20px rgba(0,0,0,.2);
+	-webkit-box-shadow:  0 6px 20px rgba(0,0,0,.2);
+	box-shadow: 0 6px 20px rgba(0,0,0,.2);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all .7s ease-in-out;
+	-webkit-backface-visibility: hidden;
+}
+#phiculator #front form {
+	padding: 0;
+	margin: 0;
+}
+#phiculator #front input {
+	padding: 0;
+	margin: 0;
+	border: 0 none transparent;
+	outline: 0;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #555;
+}
+#phiculator #front input:hover {
+	background-color: #fff !important;
+}
+#phiculator #front input[type="button"], label {
+	cursor: pointer !important;
+}
+#phiculator #philargeinput {
+	width: 200px;
+	height: 201px;
+	position: absolute;
+	z-index: 2;
+	top: 1px;
+	left: 1px;
+	font-size: 24px;
+	letter-spacing: -0.8px;
+	background-image: url(../images/arraUp.gif);
+	background-repeat:no-repeat;
+	background-position: 0 bottom;
+}
+#phiculator #phismallinput {
+	width: 124px;
+	height: 124px;
+	position: absolute;
+	z-index: 2;
+	top: 201px;
+	left: 1px;
+	font-size: 15px;
+	background-image: url(../images/arraDown.gif);
+	background-repeat:no-repeat;
+	background-position: 0 top;
+}
+#phiculator #fullcalc {
+	background-color: #f4f5f6;
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	top: 250px;
+	left: 126px;
+	background-image:url(../images/fullcalc.png);
+	background-repeat: no-repeat;
+	background-position: 50% 48%;
+}
+#phiculator #intcalc {
+	background-color: #f4f5f6;
+	width: 47px;
+	height: 47px;
+	position: absolute;
+	top: 202px;
+	left: 154px;
+	background-image:url(../images/intcalc.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+#phiculator #front label {
+	text-align: center;
+}
+#phiculator #front label span, #phiculator #front a span {
+	display: none;
+}
+#phiculator #front label:hover {
+	background-color: #fff !important;
+}
+#phiculator #front input[type="radio"]:checked+label {
+	background-color: #fff !important;
+}
+#phiculator #reset {
+	background-color: #f4f5f6;
+	width: 27px;
+	height: 26px;
+	position: absolute;
+	top: 202px;
+	left: 126px;
+	font-weight: normal;
+	background-image:url(../images/reset.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	text-indent: 100px;
+	overflow: hidden;
+}
+#phiculator #info {
+	display: block;
+	background-color: #f4f5f6;
+	width: 27px;
+	height: 20px;
+	position: absolute;
+	top: 229px;
+	left: 126px;
+	text-decoration: none;
+	color: #323232;
+	text-align: center;
+	line-height: 20px;
+	font-size: 8px;
+	text-transform: uppercase;
+	background-image:url(../images/info.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+#phiculator #info:hover {
+	background-color: #fff;
+}
+#phiculator .active {
+	background-color: #fff !important;
+	background-image: url(../images/borderTile.gif) !important;
+	background-repeat: repeat-x !important;
+	background-position: 0 bottom !important;
+	z-index: 1 !important;
+}
+#phiculator #phismallinput.active {
+	background-image: none !important;
+}
+#phiculator .inactive {
+	background-color: #f4f5f6;
+}
+#phiculator #intcalctype, #fullcalctype {
+	display: none;
+}
+#phiculator #back span {
+	color:#999
+}
+#phiculator #back p {
+	margin: 0;
+	padding: 0;
+}
+#phiculator #back a {
+	text-decoration: none;
+	color:#666;
+	display: block;
+	padding: 6px 10px 7px 10px;
+}
+#phiculator #back a:hover {
+	text-decoration: none;
+	color:#333;
+	background-color: #FFF;
+}
+#phiculator #backheader {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 1px 1px 0 1px;
+	background-color: #fff;
+}
+#phiculator #phitmllogo {
+	float: left;
+	width: 48px;
+	height: 115px;
+	border-right: 1px solid #ddd;
+	margin: 43px 0 0 21px;
+	background-image: url(../images/phiculaltor-icon-logo.png);
+	background-repeat: no-repeat;
+	background-position: 0 12px;
+}
+#phiculator #phitmllogo span {
+	display: none;
+}
+#about {
+	float: left;
+	width: 130px;
+	margin: 56px 0 0 0;
+}
+#phiculator h1 {
+	margin: 0 0 4px 10px;
+	width: 106px;
+	height: 19px;
+	background-image: url(../images/phiculator-text.gif);
+	background-repeat: no-repeat;
+}
+#phiculator h1 span {
+	display: none;
+}
+#phiculator h2 {
+	font-family: Helvetica, Arial, sans-serif !important;
+	font-size: 9px !important;
+	line-height: normal;
+	font-weight: normal !important;
+	margin: 4px 0 4px 10px !important;
+	color: #666;
+	letter-spacing: 0;
+}
+#phiculator #links {
+	float: left;
+	width: 200px;
+	height: 123px;
+	background-color: #f4f5f6;
+	margin: 1px 1px 0 1px;
+}
+#phiculator #links ul, #phiculator #links li {
+	margin: 0 !important;
+	padding: 0 !important;
+	text-indent: 0;
+	list-style: none;
+	list-style-type: none;
+}
+#phiculator #links ul {
+	padding: 10px 16px 10px 16px !important;
+}
+/* WIDGET SPECIFIC */
+
+#front {
+	display: block;
+}
+#back {
+	display: none;
+}
+
+/* THESE ARE HIDDEN FROM WIDGET */
+
+.web #phiculator {
+	-webkit-perspective: 600;
+}
+.web #front {
+	-webkit-transform: rotateY(0);
+	z-index: 200;
+}
+.web #back {
+	display: block;
+	-webkit-transform: rotateY(180deg);
+	z-index: 100;
+}
+.web .showback #front {
+	-webkit-transform: rotateY(-180deg);
+	z-index: 100;
+}
+.web .showback #back {
+	-webkit-transform: rotateY(0deg);
+	z-index: 200;
+}

@@ -1,0 +1,39 @@
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.scrolled{
+    background-color: #fff;
+    color: #fff;
+    transition: .5s ease-in-out;
+}
+.footer-links{
+    text-decoration: none;
+    color:#000;
+}
+.footer-links:hover{
+    color:#fff;
+    transition: .3s;
+}
+
+.footer-link--brand{
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-link--brand:hover{
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+
+
+.card-links{
+    text-decoration: none;
+    color:#000;
+}
+.card-links:hover{
+	color: #ff0000;
+	transition: .3s;
+
+}

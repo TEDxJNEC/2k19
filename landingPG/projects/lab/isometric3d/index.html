@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/lab/isometric3d/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:34:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <title>Simple 3D isometric-style angled image in CSS - By Thismanslife</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        color: #aaa;
+    }
+
+    a {
+        color: #0099dd;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .showcase {
+        background-color: #f2efe2;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        /*Optional persepctive effect*/
+        /*
+        -webkit-perspective: 2000;
+        perspective: 2000;
+        */
+    }
+
+    .img1 {
+        background-image: url(img1.png);
+    }
+
+    .angled {
+        display: inline-block;
+        position: absolute;
+        /*Position in the middle, scale down a bit (65%) and then do the magic angling part */
+        transform: translate3d(-50%, -50%, 0) scale(.65) rotateX(55deg) rotateY(0deg) rotateZ(45deg);
+        top: 50%;
+        left: 50%;
+        /*Put a big soft shadow below everything*/
+        box-shadow: 200px 200px 200px rgba(0, 0, 0, .2);
+        transition: all .5s ease;
+    }
+
+    .angled:hover {
+        transform: translate3d(-50%, -50%, 0) scale(.65) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transition: all .2s ease;
+    }
+
+    .angled:hover:before,
+    .angled:hover:after {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .angled img {
+        border-radius: 12px;
+        display: block;
+        /*Help prevent jagged rendering*/
+        transform: translate3d(0, 0, 0);
+    }
+
+    .angled,
+    .angled:before,
+    .angled:after {
+        border-radius: 12px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*Help prevent jagged rendering*/
+        backface-visibility: hidden;
+    }
+
+    .angled:before,
+    .angled:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: inherit;
+        /*Darken the edges using an inset shadow*/
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, .4);
+        transition: all .2s ease;
+    }
+
+    .angled:before {
+        /*Create an edge - part 1*/
+        z-index: -1;
+        transform: translate3d(3px, 3px, 0);
+    }
+
+    .angled:after {
+        /*Create an edge - part 2*/
+        z-index: -2;
+        transform: translate3d(6px, 6px, 0);
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+</style>
+
+<body>
+    <div class="showcase">
+        <div class="img1 angled"><img src="img1.png" alt=""></div>
+    </div>
+    <footer>Simple 3D isometric-style angled image in CSS – By <a href="../../../index.html">Thismanslife</a></footer>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-322049-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-322049-1');
+
+</script>
+
+<!-- GoSquared Analytics -->
+<script>
+    ! function(g, s, q, r, d) {
+        r = g[r] = g[r] || function() {
+            (r.q = r.q || []).push(
+                arguments)
+        };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '../../../../d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.
+        insertBefore(d, q)
+    }(window, document, 'script', '_gs');
+
+    _gs('GSN-960181-M');
+    _gs('set', 'trackLocal', true);
+
+</script>
+</body>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/lab/isometric3d/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:34:16 GMT -->
+</html>

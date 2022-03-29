@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/phiculator/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Phiculator: The Golden Ratio calculator from Thismanslife - v1.00 BETA</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="Phiculator.wdgt/css/phistyles.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="Phiculator.wdgt/js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="Phiculator.wdgt/js/jquery.alphanumeric.js"></script>
+    <script type="text/javascript" src="Phiculator.wdgt/js/phiculate.js"></script>
+
+</head>
+
+<body>
+
+    <div id="header" class="group">
+        <div id="intro" class="group">
+            <h1>Phiculator</h1>
+            <div id="description">
+                <h2>A  simple widget for your Mac OSX dashboard, which given any number, will calculate the corresponding value using the golden ratio. Useful to anyone wishing to create anything with divine proportions! <br>Oh, and it's FREE.</h2>
+                <a href="Phiculator.wdgt.zip" id="download">Download</a>
+            </div>
+            <!-- END description -->
+        </div>
+        <!-- END intro -->
+    </div>
+    <!-- END header -->
+
+
+    <div id="contentinner" class="group">
+        <div id="maincontent">
+            <div id="trial">
+                <div id="phiculatorapp">
+                    <div id="phiculatorappinner">
+                        
+<div id="phiculator" class="showfront"> 
+  <script type="text/javascript">
+//Check if running as a widget, if not make some changes
+if (!window.widget)
+document.body.className = document.body.className+' web';
+</script>
+  <div id="front">
+    <form name="phiform">
+      <input name="phismallinput" id="phismallinput" type="text" value="1" maxlength="13" class="active" tabindex="1" onfocus="focustoggle(this.id)" />
+      <input name="philargeinput" id="philargeinput" type="text" value="1.618033988749" maxlength="13" class="inactive" tabindex="2" onfocus="focustoggle(this.id)" />
+      <input type="radio" name="calctype" id="fullcalctype" value="fullcalc" checked="checked" onchange="phiculate()" onclick="phiculate()" />
+      <label title="Phiculate" id="fullcalc" for="fullcalctype"><span>Phiculate</span></label>
+      <input type="radio" name="calctype" id="intcalctype" value="intcalc" onchange="phiculate()" onclick="phiculate()" />
+      <label title="Phiculate (Integer)" id="intcalc" for="intcalctype"><span>Phiculate (Integer)</span></label>
+      <input type="button" id="reset" value="Reset" title="Reset" onclick="resetall();" />
+      <a href="#back" id="info" title="Information" onclick="showPrefs(); return false;"><span>Info</span></a>
+    </form>
+  </div>
+  <!-- END front -->
+  
+  <div id="back">
+    <div id="backheader">
+      <div id="phitmllogo"> <span>&Phi;</span> </div>
+      <!-- END phitmllogo -->
+      <div id="about">
+        <h1><span>Phiculator</span></h1>
+        <h2>V1.00 <span>BETA</span></h2>
+        <p> <a href="../../index.html" onclick="weblink(this.href); return false;"> <span>Creator</span> <br />
+          James Mellers <br />
+          thismanslife.co.uk </a> </p>
+      </div>
+      <!-- END about --> 
+    </div>
+    <!-- END header -->
+    <div id="links">
+      <ul>
+        <li><a href="../../phiculator/index.html" onclick="weblink(this.href); return false;"><span>Information</span> <br />
+          thismanslife.co.uk/phiculator</a></li>
+        <li><a href="mailto:james@thismanslife.co.uk"><span>Contact</span> <br />
+          james@thismanslife.co.uk</a></li>
+        <li><a href="#front" onclick="hidePrefs(); return false"><span>Back to</span> <br />
+          Phiculator</a></li>
+      </ul>
+    </div>
+    <!-- END links --> 
+  </div>
+  <!-- END back --> 
+  
+</div>
+<!-- END phiculator --> 
+
+<script type="text/javascript">
+
+//Disallow entry of all but numeric values, but allow a few exceptions
+$('#phismallinput').numeric({allow:".xcvaz"});
+$('#philargeinput').numeric({allow:".xcvaz"});
+
+//Check which key was pressed and calculate if all ok
+function checkKeycode(e) 
+{
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+	else;
+
+//Phiculate if key is number (0-9) or numerickeypad (0-9) or decimal (.) or period (.) or backspace or delete or return
+	if ((code >= 47) && (code <= 57) || (code >= 96) && (code <= 105) || (code == 110) || (code == 190) || (code == 8) || (code == 46) || (code == 13)) 
+	{phiculate();};
+}
+//Perform the fucntion when key is pressed
+document.onkeyup = checkKeycode;
+
+//Focus on the small input (first time page loads)
+document.phiform.phismallinput.focus();
+//Setting focus also selects the input fields contents (unwanted side effect), so this now deselects the contents (using a harmless trick, simply setting the value to 1 again)
+document.phiform.phismallinput.value = 1;
+
+</script>
+                    </div>
+                    <p id="phiitsdivine" title="divine |diˈvīn|
+adjective ( -viner , -vinest )
+1 of, from, or like God or a god
+2 excellent; delightful"><em>It's divine</em></p>
+                </div>
+                <!-- END phiculatorapp -->
+            </div>
+            <!-- END trial -->
+
+            <div id="explain">
+                <h2>Calculate with Phi</h2>
+                <p>&Phi;, Phi, the Fibonacci sequence, the golden ratio, the golden section, the golden mean, the divine proportion. It&rsquo;s known as many things, but the mysterious ratio they all refer to is the same, <strong><br />
+      1:1.618033988749...</strong></p>
+                <p>Found in art, architecture, design, and most intriguingly, in nature, this ratio has been used <a href="http://en.wikipedia.org/wiki/Golden_ratio#History" target="_blank">throughout</a> <a href="http://www.goldennumber.net/history.htm" target="_blank">history</a> and <a href="http://www.flickr.com/photos/stop/5034665936/" target="_blank">to</a> <a href="http://www.iainclaridge.co.uk/blog/?p=3671" target="_blank">this</a> <a href="http://stam-design-stam.blogspot.com/2011/06/law-of-beauty-hidden-behind-icloud-icon.html" target="_blank">day</a> for its aesthetic beauty. </p>
+            </div>
+            <!-- END explain -->
+
+            <div id="howtouse">
+                <div class="phihowtoblocktext">
+                    <h2>How do I use it?</h2>
+                </div>
+                <div class="howto">
+                    <div class="phihowtoblocktext">
+                        <h3>Number Entry</h3>
+                        <p>Simply type a number into either of the entry boxes and Phiculator will calculate the corresponding number according to the golden ratio.</p>
+                        <p>Enter a number into the larger box at the top, to calculate the smaller proportional value in the box below, or vice-versa enter a number into the smaller box at the bottom, to calculate the larger proportional value in the box above. Confused? Oh come on, read all that again. Got it? Ok good.</p>
+                    </div>
+                    <div class="phihowtoimage"><img src="images/phiNumberEntryIcon.png" width="60" height="89" alt="" /></div>
+                </div>
+                <div class="howto">
+                    <div class="phihowtoblocktext">
+                        <h3>Direction</h3>
+                        <p>Indicates which way you are performing the calculation, up or down the ratio, small to large or large to small.</p>
+                    </div>
+                    <div class="phihowtoimage"><img src="images/phiDirectionIcon.png" width="127" height="89" alt="" /></div>
+                </div>
+                <div class="howto">
+                    <div class="phihowtoblocktext">
+                        <h3>&Phi; INT</h3>
+                        <p> Switch to &Phi; INT (phi, integer) mode to get your calculations as integers i.e. rounded to the nearest whole number, no decimals. </p>
+                        <h3>&Phi;</h3>
+                        <p>Switch back to &Phi; and they'll be calculated to 12 decimal places.</p>
+                    </div>
+                    <div class="phihowtoimage"><img src="images/phiIntIcon.png" width="57" height="83" alt="" /></div>
+                </div>
+                <div class="howto">
+                    <div class="phihowtoblocktext">
+                        <h3>CB:AC</h3>
+                        <p>Resets your Phiculator to the default values,
+                            <br />
+                            <strong>1:1.618033988749</strong> </p>
+                    </div>
+                    <div class="phihowtoimage"><img src="images/phiResetIcon.png" width="54" height="83" alt="" /></div>
+                </div>
+                <div class="howto">
+                    <div class="phihowtoblocktext">
+                        <h3>Info</h3>
+                        <p> Information about Phiculator.</p>
+                    </div>
+                    <div class="phihowtoimage"><img src="images/phiInfoIcon.png" width="54" height="83" alt="" /></div>
+                </div>
+
+            </div>
+            <!-- END howtouse -->
+        </div>
+        <!-- END maincontent -->
+
+        <div id="sidebar">
+            <h3>Used by</h3>
+            <ul>
+                <li>Graphic designers</li>
+                <li>Fine artists</li>
+                <li>Architects</li>
+                <li>Engineers</li>
+                <li>Mathematicians</li>
+                <li>Kitchen designers</li>
+                <li>Aquarium designers</li>
+                <li>Origamists</li>
+                <li>Glass blowers</li>
+                <li><a href="contact/index.html">Tell me</a> how you use it</li>
+            </ul>
+
+            <h3>Related links</h3>
+            <ul>
+                <li><a href="http://www.textism.com/bucket/fib.html" target="_blank">What the Hell is the Fibonacci Series?</a></li>
+                <li><a href="http://en.wikipedia.org/wiki/Golden_ratio" target="_blank">According to Wikipedia</a></li>
+                <li><a href="http://www.google.com/search?q=golden+ratio" target="_blank">According to Google</a></li>
+            </ul>
+            <div id="donate">
+                <h3>Beer tokens</h3>
+                <p>Building Phiculator makes me thirsty.
+                    <br> Take pity, click the pint to donate via Paypal</p>
+                <!-- PAYPAL CODE -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="2900041" />
+                    <input type="image" src="images/beerTokens.png" name="submit" id="donatebutton" alt="" />
+                    <img alt="" border="0" src="../../../www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+                <!-- END PAYPAL CODE -->
+            </div>
+            <!-- END donate -->
+
+        </div>
+        <!-- END sidebar -->
+
+    </div>
+    <!-- END contentinner -->
+
+    <div id="phibooks" class="group">
+        <div class="cent">
+            <h2>Further reading</h2>
+
+            <p>
+                <a href="http://www.amazon.co.uk/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2FUniversal-Principles-Design-Usability-Perception%2Fdp%2F1592530079%2Fsr%3D8-1%2Fqid%3D1167310765%3Fie%3DUTF8%26s%3Dbooks&amp;tag=thismanslife-21&amp;linkCode=ur2&amp;camp=1634&amp;creative=6738"><img src="images/bookUniversalPrinciplesofDesign.png" width="68" height="79" alt="" />Universal Principles of Design</a><img src="http://www.assoc-amazon.co.uk/e/ir?t=thismanslife-21&amp;l=ur2&amp;o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                <br> 100 Ways to Enhance Usability, Influence Perception, Increase Appeal, Make Better Design Decisions, and Teach Through Design</p>
+
+            <p>
+                <a href="http://www.amazon.co.uk/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2FGeometry-Design-Studies-Proportion-Composition%2Fdp%2F1568982496&amp;tag=thismanslife-21&amp;linkCode=ur2&amp;camp=1634&amp;creative=6738"><img src="images/bookGeometryofDesign.png" width="79" height="79" alt="" />Geometry of Design</a><img src="http://www.assoc-amazon.co.uk/e/ir?t=thismanslife-21&amp;l=ur2&amp;o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                <br> Studies in Proportion and Composition</p>
+
+            <p>
+                <a href="http://www.amazon.co.uk/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2FGolden-Ratio-Extraordinary-Number-Nature%2Fdp%2F0747249881&amp;tag=thismanslife-21&amp;linkCode=ur2&amp;camp=1634&amp;creative=6738"><img src="images/bookTheGoldenRatio.png" width="54" height="80" alt="" />The Golden Ratio</a><img src="http://www.assoc-amazon.co.uk/e/ir?t=thismanslife-21&amp;l=ur2&amp;o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                <br> The Story of Phi, the Extraordinary Number of Nature, Art and Beauty</p>
+
+
+            <p>
+                <a href="http://www.amazon.co.uk/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2FDivine-Proportion-Phi-Nature-Science%2Fdp%2F1402735227%2Fsr%3D1-2%2Fqid%3D1167310963%3Fie%3DUTF8%26s%3Dbooks&amp;tag=thismanslife-21&amp;linkCode=ur2&amp;camp=1634&amp;creative=6738"><img src="images/bookDivineProportion.png" width="72" height="79" alt="" />Divine Proportion</a><img src="http://www.assoc-amazon.co.uk/e/ir?t=thismanslife-21&amp;l=ur2&amp;o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                <br> Phi in Art, Nature, and Science </p>
+        </div>
+    </div>
+    <!-- END phibooks -->
+
+    <div id="disclaimer">
+        <h2>Disclaimer</h2>
+        <p>This tool is offered free and with no guarantees. The author does not warrant or assume any legal liability or responsibility for the accuracy of results from its use or misuse.</p>
+        <p>Created using only HTML/CSS &amp; Javascript, there should be no reason why Phiculator is not safe. However, any loss of data, or other destructive effect occurring while using this tool is not the responsibility of the author. The author will not be held responsible or liable for any damages resulting from its use or misuse. You use this product entirely at your own risk. If you do not agree with this disclaimer or these conditions of use, you should not use Phiculator. Upon using Phiculator, you have agreed to these terms.</p>
+    </div>
+    <!-- END disclaimer -->
+    
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-322049-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-322049-1');
+
+</script>
+
+<!-- GoSquared Analytics -->
+<script>
+    ! function(g, s, q, r, d) {
+        r = g[r] = g[r] || function() {
+            (r.q = r.q || []).push(
+                arguments)
+        };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '../../../d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.
+        insertBefore(d, q)
+    }(window, document, 'script', '_gs');
+
+    _gs('GSN-960181-M');
+    _gs('set', 'trackLocal', true);
+
+</script>
+
+</body>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/phiculator/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:37 GMT -->
+</html>

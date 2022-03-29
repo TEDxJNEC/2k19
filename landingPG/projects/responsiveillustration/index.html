@@ -1,0 +1,625 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/responsiveillustration/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Responsive Design, Responsively Illustrated</title>
+    <style type="text/css">
+        body {
+            background-color: #069;
+            color: #fff;
+            font-family: Helvetica, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            margin: 18px 12px;
+            padding: 0;
+            font-size: 128px;
+            letter-spacing: -6px;
+            line-height: 100px;
+            color: rgba(255, 255, 255, 0.15);
+            text-rendering: optimizeLegibility;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+            font-size: 11px;
+        }
+
+        #background {
+            overflow: hidden;
+        }
+
+        #background #resize {
+            position: fixed;
+            z-index: 10;
+            overflow: visible;
+            bottom: 8px;
+            right: 0;
+            border: none;
+        }
+
+        #background #resize:before {
+            content: '';
+            border: 12px solid #fff;
+            border-color: transparent rgba(255, 255, 255, .3) transparent transparent;
+            width: 0;
+            height: 0;
+            float: left;
+            margin: 8px 10px 0 0;
+        }
+
+        #resize h2 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: -2px;
+            line-height: 40px;
+            height: 40px;
+            float: left;
+        }
+
+        #resize h2:after {
+            content: '';
+            border: 12px solid #fff;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .3);
+            width: 0;
+            height: 0;
+            float: right;
+            margin: 8px 0 0 10px;
+        }
+
+        #handheld {
+            opacity: 0;
+            display: none;
+            margin: 30px 0;
+            border-radius: 20px;
+            background-color: rgba(0, 10, 20, .8);
+            float: left;
+        }
+
+        #handheld p {
+            margin: 18px 20px;
+        }
+
+        #handheld:before {
+            display: block;
+            content: '';
+            border: 16px solid rgba(0, 10, 20, .8);
+            border-color: transparent transparent rgba(0, 10, 20, .8) transparent;
+            width: 0;
+            height: 0;
+            margin: -32px 0 0 20px;
+        }
+
+        #information {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            width: 25px;
+            height: 40px;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 0 0 0 15px;
+            margin: 15px;
+            border-radius: 20px;
+            transition: all .6s ease-in-out;
+            transition-delay: 1s;
+        }
+
+        #information:hover {
+            width: 260px;
+            height: 650px;
+            background-color: rgba(0, 10, 20, .8);
+            padding: 10px 20px 30px 20px;
+            transition: all .3s ease-in-out;
+        }
+
+        #information a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        #information a:hover {
+            color: #09F;
+            text-decoration: underline;
+        }
+
+        #information h3 {
+            text-transform: lowercase;
+            line-height: 40px;
+            margin: 0;
+            color: #069;
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: -2px;
+            width: 9px;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+        }
+
+        #information:hover h3 {
+            margin: -50px 0 16px 0;
+        }
+
+        #background div {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: -1px 0 0 -1px;
+        }
+
+        #information h4 {
+            margin: 0 0 16px 0;
+            color: #fff;
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: -2px;
+        }
+
+        #information #tweetbutton {
+            margin: 20px 0;
+        }
+
+        .floatleft {
+            float: left;
+            width: 45%;
+        }
+
+        #laptop {
+            width: 1280px;
+            height: 800px;
+        }
+
+        #tabletlandscape {
+            width: 1024px;
+            height: 768px;
+        }
+
+        #tabletportrait {
+            width: 768px;
+            height: 1024px;
+        }
+
+        #mobilelandscape {
+            width: 480px;
+            height: 320px;
+        }
+
+        #mobileportrait {
+            width: 320px;
+            height: 480px;
+        }
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #container {
+            padding: 65px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: fadein 3s;
+        }
+
+        #device,
+        #device * {
+            transition: all .7s ease-in-out;
+        }
+
+        #device {
+            background-color: #333;
+            float: left;
+            position: relative;
+            box-shadow: 0 60px 180px -60px rgba(0, 0, 0, .5);
+            perspective: 2000px;
+            transform-style: preserve-3d;
+        }
+
+        #screen {
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, .3);
+            border-radius: 2px;
+        }
+
+        #screen h1 {
+            color: #333;
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: -2px;
+            margin: 0;
+        }
+
+        #detail {
+            background-color: #333;
+            transform: rotateX(0);
+        }
+
+        /* iMac ------------------------------------------------------- */
+
+        body {
+            min-height: 1200px;
+        }
+
+        #device {
+            border-radius: 20px;
+            border: 2px solid #666;
+            border-bottom: 120px solid #666;
+        }
+
+        #screen {
+            width: 960px;
+            height: 540px;
+            margin: 40px;
+        }
+
+        #screen h1 {
+            line-height: 530px;
+            animation: fadein 3s;
+        }
+
+        #screen h1:before {
+            content: 'Desktop';
+        }
+
+        #detail {
+            width: 650px;
+            height: 380px;
+            margin: 0;
+            position: absolute;
+            top: 135%;
+            right: 192px;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 4px solid #666;
+            background-color: #666;
+            box-shadow: 0 60px 180px -60px rgba(0, 0, 0, .5);
+            transform: rotateX(75deg);
+            transform-origin: 50% 0;
+        }
+
+        #detail>div {
+            width: 630px;
+            height: 360px;
+            margin: 10px 10px;
+            border-radius: 10px;
+            background-color: #333;
+        }
+
+        #detail>div>div {
+            margin: 0 0 0 720px;
+            width: 120px;
+            height: 240px;
+            border-radius: 45%;
+            background-color: #666;
+            box-shadow: 0 50px 90px -40px rgba(0, 0, 0, .5);
+        }
+
+        /* MacBook ------------------------------------------------------- */
+
+        @media screen and (max-width: 1280px) {
+            body {
+                min-height: 1000px;
+            }
+            #device {
+                border-radius: 40px;
+                border: 4px solid #666;
+            }
+            #screen {
+                width: 720px;
+                height: 450px;
+                margin: 35px;
+            }
+            #screen h1 {
+                line-height: 440px;
+            }
+            #screen h1:before {
+                content: 'Laptop';
+            }
+            #detail {
+                width: 790px;
+                height: 520px;
+                margin: 0;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                border-radius: 28px;
+                border: 4px solid #666;
+                background-color: #666;
+                box-shadow: 0 60px 180px -60px rgba(0, 0, 0, .5);
+                transform: rotateX(75deg);
+                transform-origin: 50% 0;
+            }
+            #detail>div {
+                height: 280px;
+                width: 590px;
+                margin: 40px 100px;
+                border: 0 solid #666;
+                border-radius: 10px;
+                background-color: #333;
+            }
+            #detail>div>div {
+                margin: 0 0 0 700px;
+                width: 120px;
+                height: 200px;
+                border-radius: 60px 60px 30px 30px;
+                background-color: #666;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                opacity: 0;
+            }
+        }
+
+        /* iPad ------------------------------------------------------- */
+
+        @media screen and (max-width: 1024px) {
+            body {
+                min-height: 785px;
+            }
+            #device {
+                border-radius: 40px;
+                border: 4px solid #666;
+            }
+            #screen {
+                width: 512px;
+                height: 384px;
+                margin: 50px 56px;
+            }
+            #screen h1 {
+                line-height: 374px;
+            }
+            #screen h1:before {
+                content: 'Tablet';
+            }
+            #detail {
+                width: 28px;
+                height: 28px;
+                margin: 14px 0 0 0;
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                border: 1px solid #666;
+                border-radius: 28px;
+                background-color: #333;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                transform: rotateX(180deg);
+            }
+            #detail>div {
+                width: 10px;
+                height: 10px;
+                margin: 7px;
+                border: 2px solid #999;
+                border-radius: 4px;
+                background-color: #333;
+            }
+            #detail>div>div {
+                display: none;
+            }
+        }
+
+        /* iPad (portrait) ------------------------------------------------------- */
+
+        @media screen and (max-width: 768px) {
+            #device {
+                transform: rotate(90deg);
+                margin: 70px 0 70px -70px;
+                box-shadow: 60px 0 160px -40px rgba(0, 0, 0, .5);
+            }
+            #screen h1 {
+                transform: rotate(-90deg);
+            }
+        }
+
+        /* iPhone ------------------------------------------------------- */
+
+        @media screen and (max-width: 480px) {
+            body {
+                min-height: 500px;
+            }
+            #device {
+                transform: rotate(0);
+                margin: 0;
+                border-radius: 20px;
+                border: 4px solid #666;
+                box-shadow: 0 60px 180px -60px rgba(0, 0, 0, .5);
+            }
+            #screen {
+                width: 240px;
+                height: 160px;
+                margin: 5px 50px 5px 46px;
+            }
+            #screen h1 {
+                line-height: 150px;
+                transform: rotate(0);
+            }
+            #screen h1:before {
+                content: 'Mobile';
+            }
+            #detail {
+                width: 28px;
+                height: 28px;
+                margin: 14px 0 0 0;
+                position: absolute;
+                top: 50%;
+                right: 9px;
+                border: 1px solid #666;
+                border-radius: 28px;
+                background-color: #333;
+                transform: rotateX(180deg);
+            }
+            #detail>div {
+                width: 10px;
+                height: 10px;
+                margin: 7px;
+                border: 2px solid #999;
+                border-radius: 4px;
+                background-color: #333;
+            }
+            #detail>div>div {
+                display: none;
+            }
+        }
+
+        /* iPhone (portrait) ------------------------------------------------------- */
+
+        @media screen and (max-width: 320px) {
+            #device {
+                transform: rotate(90deg);
+                margin: 82px 0 82px -82px;
+                box-shadow: 0 60px 180px -60px rgba(0, 0, 0, .5);
+            }
+            #screen h1 {
+                transform: rotate(-90deg);
+            }
+        }
+
+        @media screen and (max-device-width: 768px) {
+            body {
+                max-width: 100%;
+            }
+            #resize,
+            #information {
+                display: none;
+            }
+            #handheld {
+                opacity: 1;
+                display: block;
+            }
+            #handheld p {
+                opacity: 1;
+                display: block;
+            }
+        }
+
+    </style>
+
+    <!-- Extend browser support scripts (not required, but helpful!) -->
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+    <script type="text/javascript" src="css3-mediaqueries.js"></script>
+    <!-- END Extend browser support -->
+
+</head>
+
+<body>
+    <div id="background">
+        <div id="laptop">
+            <div id="tabletlandscape">
+                <div id="tabletportrait">
+                    <div id="mobilelandscape">
+                        <div id="mobileportrait">
+                            <h1>Responsive Design, <br> Responsively Illustrated</h1>
+                            <div id="resize">
+                                <h2>Resize</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END background -->
+
+    <div id="information">
+        <h3>Information</h3>
+        <h4><a href="http://www.alistapart.com/articles/responsive-web-design/">Responsive Design</a>, Responsively Illustrated.</h4>
+        <p><strong>January 2012</strong></p>
+        <p>HTML/CSS + <a href="http://www.w3.org/TR/css3-mediaqueries/">media queries</a> (no images, no JS*) this is a simple interactive experiment with responsive design techniques.</p>
+        <p><strong>Resize your browser</strong> to reveal just a handful of the kind of devices you should expect web pages to be viewed on. Each device illustration is rendered using the same basic HTML which adapts its appearance to the changing viewport size, representing different devices accordingly. This is achieved using media queries to apply different CSS rules for different sizes. This experiment is intended to illustrate the basic premise of responsive web design and the power of CSS to tackle it.</p>
+        <p>This is NOT a guide for <em>the</em> breakpoints for all layouts. Values here were chosen arbitrarily for a discreet set of devices, you should take a flexible approach with logical breakpoints to suit your content and design aesthetics. Put another way: <a href="http://stephanierieger.com/the-trouble-with-android/">We should not serve specific sites to specific devices based on detection of screen size</a>.</p>
+        <p>*The only Javascript used is the excellent <a href="http://leaverou.github.com/prefixfree/">-prefix-free</a> by <a href="http://lea.verou.me/">Lea Verou</a> and <a href="http://code.google.com/p/css3-mediaqueries-js/">css3-mediaqueries.js</a> by Wouter van der Graaf. Neither script is <em>required</em> to create this demo, but they help keep things tidy, negating the need for multiple <a href="http://www.alistapart.com/articles/prefix-or-posthack/">vendor prefixes</a>, while keeping the scope of browser support as wide as possible.</p>
+        <p>Thanks for viewing, <a href="../../who/index.html">James Mellers</a></p>
+        <p id="tweetbutton">
+            <div class="floatleft"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="thismanslife">Tweet</a></div>
+            <div class="floatleft"><a href="https://twitter.com/thismanslife" class="twitter-follow-button" data-show-count="false">Follow @thismanslife</a></div>
+        </p>
+    </div>
+    <!-- END information -->
+
+    <div id="container">
+        <div id="device">
+            <div id="screen">
+                <h1></h1>
+            </div>
+            <!-- END screen -->
+            <div id="detail">
+                <div>
+                    <div></div>
+                </div>
+            </div>
+            <!-- END detail -->
+        </div>
+        <!-- END device -->
+
+        <div id="handheld">
+            <p>This is an interactive illustration which responds to changes in the size of the browser window. If you are viewing on a modern handheld device you can change its orientation (portrait/landscape) to see a basic example of it in action. The illustration should rotate to match the new orientation. For the full experience <strong>please view this page with a resizable browser.</strong></p>
+        </div>
+        <!-- END handheld -->
+
+    </div>
+    <!-- END container -->
+
+    <!-- Twitter scripts -->
+    <script type="text/javascript" src="../../../platform.twitter.com/widgets.js"></script>
+    <script>
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "../../../platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+
+    </script>
+    <!-- END Twitter scripts -->
+
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-322049-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-322049-1');
+
+</script>
+
+<!-- GoSquared Analytics -->
+<script>
+    ! function(g, s, q, r, d) {
+        r = g[r] = g[r] || function() {
+            (r.q = r.q || []).push(
+                arguments)
+        };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '../../../d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.
+        insertBefore(d, q)
+    }(window, document, 'script', '_gs');
+
+    _gs('GSN-960181-M');
+    _gs('set', 'trackLocal', true);
+
+</script>
+
+</body>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/responsiveillustration/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:11 GMT -->
+</html>

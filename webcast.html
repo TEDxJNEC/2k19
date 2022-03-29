@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webcast Form</title>
+    <link rel="shortcut icon" href="favicon.png" type="img/x-icon">
+  
+    <link rel="stylesheet" href="css/3.3.7_css_bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/formstyle.css">
+    
+</head>
+<body>
+    
+  <div class="covering">
+    <div class="progress">
+      <div class="progress-bar" style="width: 0;"> <span class="sr-only">60% Complete</span> </div>
+    </div>
+    <!--<video autoplay muted loop id="video-bg" >
+       <source src="dist/video/rain.mp4" type="video/mp4" >
+        <source src="dist/video/rain.webm"  type="video/webM" >
+         <source src="dist/video/rain.ogv"  type="video/ogg" >
+  </video>-->
+    <h1 class="h1-header animated bounceInLeft"><a href="index.html"><img src="images/logo.png" alt=""></a></h1>
+    <div class="container-fluid table-class">
+      <div class="black " >
+        <div class="inner cover">
+          <div class="centerUp">
+            <div class="questionaire">
+              <form>
+                <ul class="progress-form">
+                  <li class="form-group animated fadeInRightBig  activate" data-color="#E1523D" data-percentage="20%">
+                    <label for="nameInput">
+                    <h1>Hey there!</h1>
+                    Let's get you started. Would you mind introducing yourself?
+                    </label>
+                    <input type="text" class="form-control getName" id="q1" placeholder="Name Lastname"  required="required"/>
+                  </li>
+                  <li class="form-group animated hide inactive" data-color="#7C6992"  data-percentage="40%">
+                    <label for="exampleInputEmail1">
+                    <h1>Nice to meet you, <span class="cName">parnter</span>!</h1>
+                    We're going to send you some information when we're thru. Can we have your email? Don't worry, we're not into spamming.
+                    </label>
+                    <input type="email" class="form-control" id="q2" placeholder="youremail@domain.com" required="required"/>
+                  </li>
+                  <li class="form-group animated hide" data-color="#00AF66"  data-percentage="60%">
+                    <label for="exampleInputEmail1">
+                    <h1>We need your phone number</h1>
+                   Kindly specify the number that you will be using for official payment method.
+                    </label>
+                    <input class="form-control" id="q3"  required/></input>
+                    <button type="button" class="btn btn-xs btn-danger help pull-right" style="margin:5px 0; border-radius: 36px; padding: 3px 10px;" data-toggle="popover" data-placement="top" title="What's the big idea?" data-content="It's important to know all of your evironments (PEST).  Don't just assume you know your them, you need research to back it up">?</button>
+                  </li>
+                  <li class="form-group animated hide" data-color="#00AF66"  data-percentage="80%">
+                    <label for="exampleInputEmail1">
+                    <h1>Tell us your Organization/Institute</h1>
+                    We want to know you come from where. 
+                    </label>
+                    <input class="form-control" id="q4" placeholder="" required/></input>
+                </l>
+
+
+                  <li class="form-group animated hide scrollable" data-color="#00AF66"  data-percentage="100%">
+                    <h3>Please Review Your Answers (click on any of them to edit):</h3>
+                    <div class=" editable">
+                      <div class="break answer1" contenteditable="true"></div>
+                      <div class="break answer2" contenteditable="true"></div>
+                      <div class="break answer3" contenteditable="true"></div>
+                      <div class="break answer4" contenteditable="true"></div>
+
+                    </div>
+                  </li>
+                </ul>
+              </form>
+            </div>
+            <div class="count"><span class="img_cnt"></span> / <span class="img_amt"></span></div>
+            <button class="btn btn-default btn-lg nxt animated hide" >Next <span class="icon-next"></span></button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <script type="text/javascript">var submitted=false;</script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='thankyou2.html';}"></iframe>
+
+      <form id="finalform" action="https://docs.google.com/forms/d/e/1FAIpQLSdtAgk9fyZ1wwoAkVi6aJm9zU4HlBKnV6Y8QmjdGnNh_lmrdg/formResponse" method="POST" target="hidden_iframe"
+      onsubmit="submitted=true;" >
+        <input type="text" name="entry.2092238618" hidden="" class="answer1" style="color:#444"/>
+        <input type="text" name="entry.1556369182" hidden="" class="answer2" style="color:#444"/>
+        <input type="text" name="entry.1391121447" hidden="" class="answer3" style="color:#444"/>
+        <input type="text" name="entry.479301265" hidden="" class="answer4" style="color:#444"/>
+    
+        <input type="submit" class="btn btn-default btn-lg hide submit" value="Send"/>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="animated thanks hide">
+    <h1 style="font-weight:100; font-size:48px; width: 80%; margin: 0 auto;">Thanks!  We'll get back to you shortly!</h1>
+  
+      <button class="btn btn-lg btn-success" style="margin:20px;" >Let's go play</button>
+    </form>
+  </div>
+
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/formjs.js"></script>
+      
+</body>
+</html>
+

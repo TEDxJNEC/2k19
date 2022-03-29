@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/lab/impossiblytipsy/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <title>Thismanslife: Impossibly Tipsy</title>
+    <style>
+        @keyframes tipsy {
+            0 {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+        
+        body {
+            font-family: helvetica, arial, sans-serif;
+            background-color: #2e2e31;
+        }
+        
+        a {
+            display: block;
+            color: #fffbf1;
+            font-size: 80px;
+            font-weight: bold;
+            letter-spacing: -3px;
+            margin: 0;
+            text-decoration: none;
+            text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+        a:before,
+        a:after {
+            content: '';
+            padding: .9em .4em;
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            top: 50%;
+            display: block;
+            border: 15px solid red;
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            animation: 10s infinite alternate ease-in-out tipsy;
+        }
+        
+        a:before {
+            border-color: #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            z-index: -1;
+        }
+        
+        a:after {
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d9524a #d9524a;
+            box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../../index.html">Thismanslife</a>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-322049-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-322049-1');
+
+</script>
+
+<!-- GoSquared Analytics -->
+<script>
+    ! function(g, s, q, r, d) {
+        r = g[r] = g[r] || function() {
+            (r.q = r.q || []).push(
+                arguments)
+        };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '../../../../d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.
+        insertBefore(d, q)
+    }(window, document, 'script', '_gs');
+
+    _gs('GSN-960181-M');
+    _gs('set', 'trackLocal', true);
+
+</script>
+</body>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/lab/impossiblytipsy/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:33:37 GMT -->
+</html>

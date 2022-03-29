@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/responsivevideo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:32:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Responsive video ratio calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../../ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="calculator">
+        <header>
+            <div class="maxw">
+                <h1>Scale videos in a responsive layout with CSS</h1>
+                <h2>Responsive Video Ratio Calculator</h2>
+                <p class="tip">Enter the size of your video in pixels, like <a href="#" onclick="setratio(1920,1080); return false;">1920x1080</a> or as a ratio like <a href="#" onclick="setratio(4,3); return false;">4:3</a></p>
+            </div>
+        </header>
+        <div id="hero">
+            <div class="maxw">
+                <div id="inputs" class="group">
+                    <div id="width">
+                        <input type="text" pattern="[0-9]*" size="6" name="videowidth" id="videowidth" placeholder="W">
+                    </div>
+                    <div id="by">:</div>
+                    <div id="height">
+                        <input type="text" pattern="[0-9]*" size="6" name="videoheight" id="videoheight" placeholder="H">
+                    </div>
+                </div>
+                <div id="intrinsic" class="videocontainer">
+                    <div id="demovideo">
+                        <div id="result"></div>
+                    </div>
+                </div>
+                <!-- END intrinsic -->
+            </div>
+        </div>
+        <!-- END hero -->
+    </div>
+    <!-- END calculator -->
+
+
+    <div id="demo">
+        <div class="maxw">
+            <h2>Responsive video?</h2>
+            <p>So you need a video to fit in your responsive layout but don't know how to get it scaling in proportion? It's easy, using a little CSS and an <a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video" target="_blank">intrinsic ratio</a>. This simple technique allows videos embedded in your responsive website to scale up and down with the layout, while maintaining the correct proportions, and all without the need for JavaScript.</p>
+
+            <p>Using the width and height of your video, this tool calculates the CSS padding value required, and there's example code below to help you get it working. If you're still stuck, read this article on <a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video" target="_blank">alistapart</a>.</p>
+            <h2>Example code</h2>
+            <h3>HTML</h3>
+            <pre><code class="language-html">&lt;div class="videocontainer">
+    &lt;video>&lt;/video>
+&lt;/div></code></pre>
+
+            <h3>CSS</h3>
+            <pre><code class="language-css">.videocontainer {
+    position: relative;
+    /*Intrinsic ratio value below*/
+    padding-bottom: <span id="paddingvalue">ENTER VIDEO SIZE ABOVE</span>;
+    height: 0;
+}
+.videocontainer video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}</code></pre>
+        </div>
+    </div>
+    <!-- END demo -->
+
+    <footer>
+        <div class="maxw">Responsive video ratio calculator by <a href="../../index.html">Thismanslife</a></div>
+    </footer>
+    <script>
+        document.getElementById("videowidth").focus();
+
+        function round(value, decimals) {
+            return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+        }
+
+        $('#videowidth, #videoheight').on('input', function() {
+            calcit();
+        });
+
+        function calcit() {
+            videowidth = document.getElementById("videowidth").value;
+            videoheight = document.getElementById("videoheight").value;
+            calcpad = round((videoheight / videowidth * 100), 5);
+            //alert(calcpad);
+            if (videowidth > 0 && videoheight > 0) {
+                document.getElementById("paddingvalue").innerHTML = calcpad + "%";
+                document.getElementById("result").innerHTML = calcpad + "%";
+                document.getElementById("intrinsic").style.paddingBottom = calcpad + "%";
+            } else {
+                document.getElementById("paddingvalue").innerHTML = "";
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("intrinsic").style.paddingBottom = 0;
+            }
+        };
+
+        function setratio(w, h) {
+            document.getElementById("videowidth").value = w;
+            document.getElementById("videoheight").value = h;
+            calcit();
+        }
+
+    </script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-322049-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-322049-1');
+
+</script>
+
+<!-- GoSquared Analytics -->
+<script>
+    ! function(g, s, q, r, d) {
+        r = g[r] = g[r] || function() {
+            (r.q = r.q || []).push(
+                arguments)
+        };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '../../../d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.
+        insertBefore(d, q)
+    }(window, document, 'script', '_gs');
+
+    _gs('GSN-960181-M');
+    _gs('set', 'trackLocal', true);
+
+</script>
+
+</body>
+
+
+<!-- Mirrored from www.thismanslife.co.uk/projects/responsivevideo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Aug 2019 05:32:59 GMT -->
+</html>
